@@ -7,11 +7,11 @@ import pani from "./Images/pani.jpg";
 import firangi from "./Images/firangi.jpg";
 import dahavi from "./Images/dahavi.jpg";
 import shortcircuit from "./Images/shortcircuit.jpg";
-import anokhee from "./Images/anokhee.jpg";
-import fairlady from "./Images/fairlady.jpg";
-import fikarnot from "./Images/fikarnot.jpg";
-import SHANNISHAN from "./Images/SHANNISHAN.jpg";
-import category from "./IMGDATA.js";
+// import anokhee from "./Images/anokhee.jpg";
+// import fairlady from "./Images/fairlady.jpg";
+// import fikarnot from "./Images/fikarnot.jpg";
+// import SHANNISHAN from "./Images/SHANNISHAN.jpg";
+// import category from "./IMGDATA.js";
 import './App.css';
 
 // import { Link } from "react-router-dom";
@@ -27,68 +27,12 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper";
 
-
 function HOMEINDEX() {
-
-    let imageGallery = [
-      { src: { anokhee }, title: "img1" },
-      { src: { fairlady }, title: "img2" },
-      { src: { fikarnot }, title: "img3" },
-      { src: { SHANNISHAN }, title: "img4" },
-    ];
-  // const [tages, setTages] = useState("all");
-  // const [filteredImages, setFilteredImages] = useState([]);
-
-  // useEffect(() => {
-  //   tages === "all"
-  //     ? setFilteredImages(Photolist)
-  //     : setFilteredImages(Photolist.filter((Photolist) => Photolist.tages === tages));
-  // }, [tages]);
-
   return (
     <div>
       {/* Slideshow / Corusal Section */}
 
-      {/* <div
-        id="carouselExampleSlidesOnly"
-        class="relative"
-        data-te-carousel-init
-        data-te-carousel-slide
-      >
-        <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-          <div
-            class="relative float-left -mr-[100%] w-full transition-transform duration-[100ms] ease-in-out motion-reduce:transition-none"
-            data-te-carousel-item
-            data-te-carousel-active
-          >
-            <img src={TariSathe} class="block w-full" alt="Wild Landscape" />
-          </div>
-          <div
-            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-            data-te-carousel-item
-            data-te-carousel-active
-          >
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-              class="block w-full"
-              alt="Camera"
-            />
-          </div>
-          <div
-            class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
-            data-te-carousel-item
-            data-te-carousel-active
-          >
-            <img
-              src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-              class="block w-full"
-              alt="Exotic Fruits"
-            />
-          </div>
-        </div>
-      </div> */}
-
-      <section class="mt-20">
+      <section>
         <div class="">
           <Swiper
             spaceBetween={30}
@@ -165,54 +109,6 @@ function HOMEINDEX() {
       </section>
 
       {/* Upcomming and Released Button Section */}
-      <section class="overflow-hidden text-neutral-700">
-        <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
-          <div>
-            {imageGallery.map((images) => (
-              <img
-                src={images.src}
-                title={images.title}
-                alt="Images"
-                class="inline-grid content-center h-52 w-52"
-              />
-            ))}
-          </div>
-          {/* <div>
-            <TagButton
-              name="upcomming"
-              tagActive={tages === "upcomming" ? true : false}
-              handleSetTag={setTages}
-            />
-            <TagButton
-              name="relesed"
-              tagActive={tages === "relesed" ? true : false}
-              handleSetTag={setTages}
-            />
-          </div>
-
-          <div>
-            {filteredImages.map((Photolist) => (
-              <div key={Photolist.id}>
-                <a href={`/Images/${Photolist.imageName}`}>
-                  <img src={`/Images/${Photolist.imageName}`} alt="/" />
-                </a>
-              </div>
-            ))}
-            </div>*/}
-        </div>
-
-        {category.map((values) => {
-          return (
-            <div className="img">
-              <div className="image">
-                <img src={values.imgs} alt="" />
-                <h3>{values.text}</h3>
-                <h3>{values.price}</h3>
-              </div>
-            </div>
-          );
-        })}
-      </section>
 
       {/* Distribution Section */}
 
@@ -361,17 +257,5 @@ function HOMEINDEX() {
     </div>
   );
 }
-
-// const TagButton = ({ name, handleSetTag, tagActive }) => {
-//   return (
-//     <button
-//       class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-//       className={`tag ${tagActive ? "active" : null}`}
-//       onClick={() => handleSetTag(name)}
-//     >
-//       {name.toUpperCase()}
-//     </button>
-//   );
-// };
 
 export default HOMEINDEX;

@@ -1,36 +1,43 @@
-import { Link } from "react-router-dom";
-import "./NaviBar.css";
 import logo from './Images/logo.jpeg';
+import './Navigation.css';
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 
 function Navbar() {
+	const navRef = useRef();
 
+	const showNavbar = () => {
+		navRef.current.classList.toggle(
+			"responsive_nav"
+		);
+	};
 
-  return (
-    
-
-    <div className="abc">
-      <div className="banner1">
-            <div className="logo">
-               <img src={logo}alt=""/>
-           </div>            
-              <div class="nav">
-                  
-                  
-                       <Link className="active" to="/">Home</Link>
-                       <Link className="active" to="/aboutus">About Us</Link>
-                       <Link className="active" to="/Distribution">Distribution</Link>
-                       <Link className="active" to="/Marketing">Marketing</Link>
-                       <Link className="active" to="/Licensing">Licensing</Link>
-                       <Link className="active" to="/contactus">Contact us</Link>
-                        
-                    </div>
-                    
-            </div>  
-            </div>
-  
-  
-  );
+	return (
+    <div className='bar'>
+		  <header>
+			 <img className='logo' src={logo}alt=""/>
+        <nav ref={navRef}>
+          <a href="/#">Home</a>
+          <a href="/aboutus">About us</a>
+          <a href="/Distribution">Distribution</a>
+          <a href="/Marketing">Marketing</a>
+          <a href="/Licensing">Licensing</a>
+          <a href="/Contactus">Contact us</a>
+          <button
+            className="nav-btn nav-close-btn"
+            onClick={showNavbar}>
+            <FaTimes />
+          </button>
+        </nav>
+        <button
+          className="nav-btn"
+          onClick={showNavbar}>
+          <FaBars />
+        </button>
+		  </header>
+    </div>
+	);
 }
 
-export default Navbar;
+export default Navbar;

@@ -5,7 +5,7 @@ function Aboutus() {
   return (
     <div>
       <section class="text-white  body-font">
-        <div class="container px-5 py-24 mx-auto">
+        <div class="container px-5 py-20 mx-auto mt-auto">
           <div class="flex flex-col text-center w-full mb-20">
             <br></br>
             <br></br>
